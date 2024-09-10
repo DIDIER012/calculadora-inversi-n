@@ -1,0 +1,28 @@
+@if(!results) {
+    <p class="center">Completa los campos requeridos.</p>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Años</th>
+            <th>Valor inicial</th>
+            <th>Interes anual</th>
+            <th>Interes total</th>
+            <th>Capital Invertido</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @for (result of results; track result.year) {
+            <tr>
+                <th>{{ result.year}}</th>
+                <th>{{ result.valueEndOfYear | currency}}</th>
+                <th>{{ result.interest  | currency }}</th>
+                <th>{{ result.totalInterest  | currency}}</th>
+                <th>{{ result.totalAmountInvested  | currency}}</th>
+            </tr>
+        }
+    </tbody>
+</table>
